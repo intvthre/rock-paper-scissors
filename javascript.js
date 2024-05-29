@@ -60,9 +60,41 @@ let computerScore = 0;
 //}
 
 function playRound (humanChoice, computerChoice) {
+
     
-    if ("rock","rock") {
-        console.log("It's a draw!");
+    if (humanChoice === "rock" && computerChoice === "rock") {
+        return ("It's a draw!");
+    }   
+    else if (humanChoice === "rock" && computerChoice === "paper") {
+        return ("You lose!");
+    }   
+
+    else if (humanChoice === "rock" && computerChoice === "scissors") {
+        return ("You win!");
+    }   
+
+    else if (humanChoice === "paper" && computerChoice === "rock") {
+        return ("You win!");
+    }   
+
+    else if (humanChoice === "paper" && computerChoice === "paper") {
+        return ("It's a draw!");
+    }   
+
+    else if (humanChoice === "paper" && computerChoice === "scissors") {
+        return ("You lose!");
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "rock") {
+        return ("You lose!");
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
+        return ("You win!");
+    }   
+
+    else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
+        return ("It's a draw!");
     }   
 
 }
@@ -73,52 +105,13 @@ const computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
 
 
+// Fix playRound so if else goes through all conditions rather than return first only
+// You should be able to add score increment after return
 
-  /*   if (humanChoice() === "rock", computerChoice() === "rock" ) {
-        console.log("It's a draw!");
-    }   
+// Write the logic to play the entire game
 
-    else if (humanChoice() === "rock", computerChoice() === "paper" ) {
-        console.log("You lose!");
-    }   
+// 'Function' {
+// Move playRound and score variables to function
+// Call 'playRound' to play five rounds
 
-    else if (humanChoice() === "rock", computerChoice() === "scissors" ) {
-        console.log("You win!");
-    }   
-
-    else if (humanChoice() === "paper", computerChoice() === "rock" ) {
-        console.log("You win!");
-    }   
-
-    else if (humanChoice() === "paper", computerChoice() === "paper" ) {
-        console.log("It's a draw!");
-    }   
-
-    else if (humanChoice() === "paper", computerChoice() === "scissors" ) {
-        console.log("You lose!");
-    }
-
-    else if (humanChoice() === "scissors", computerChoice() === "rock" ) {
-        console.log("You lose!");
-    }
-
-    else if (humanChoice() === "scissors", computerChoice() === "paper" ) {
-        console.log("You win!");
-    }   
-
-    else if (humanChoice() === "scissors", computerChoice() === "scissors" ) {
-        console.log("It's a draw!");
-    }   
-} */
-
-
-
-
-
-
-//What don't I understand here? What am I missing?
-// I created the function.
-// I'm not sure if I defined playRound parameters correctly
-// I didn't make the parameter case insensitive
-// I did not have console.log return a message
-// I did not code a way to increment the score
+// }
