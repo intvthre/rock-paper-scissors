@@ -66,14 +66,17 @@ function playRound (humanChoice, computerChoice) {
         return ("It's a draw!");
     }   
     else if (humanChoice === "rock" && computerChoice === "paper") {
+        computerScore += 1;
         return ("You lose!");
     }   
 
     else if (humanChoice === "rock" && computerChoice === "scissors") {
+        humanScore += 1;
         return ("You win!");
     }   
 
     else if (humanChoice === "paper" && computerChoice === "rock") {
+        humanScore += 1;
         return ("You win!");
     }   
 
@@ -82,20 +85,25 @@ function playRound (humanChoice, computerChoice) {
     }   
 
     else if (humanChoice === "paper" && computerChoice === "scissors") {
+        computerScore += 1;
         return ("You lose!");
     }
 
     else if (humanChoice === "scissors" && computerChoice === "rock") {
+        computerScore += 1;
         return ("You lose!");
     }
 
     else if (humanChoice === "scissors" && computerChoice === "paper") {
+        humanScore += 1;
         return ("You win!");
     }   
 
     else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
         return ("It's a draw!");
     }   
+
+    
 
 }
 
@@ -104,9 +112,6 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
-
-// Fix playRound so if else goes through all conditions rather than return first only
-// You should be able to add score increment after return
 
 // Write the logic to play the entire game
 
