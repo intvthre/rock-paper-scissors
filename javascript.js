@@ -60,8 +60,21 @@ let computerScore = 0;
 //}
 
 function playRound (humanChoice, computerChoice) {
+    
+    if ("rock","rock") {
+        console.log("It's a draw!");
+    }   
 
-    if (humanChoice() === "rock", computerChoice() === "rock" ) {
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+
+
+  /*   if (humanChoice() === "rock", computerChoice() === "rock" ) {
         console.log("It's a draw!");
     }   
 
@@ -96,9 +109,16 @@ function playRound (humanChoice, computerChoice) {
     else if (humanChoice() === "scissors", computerChoice() === "scissors" ) {
         console.log("It's a draw!");
     }   
-}
+} */
 
-const humanChoice = getHumanChoice.toLowerCase();
-const computerChoice = getComputerChoice();
 
-playRound(humanChoice, computerChoice);
+
+
+
+
+//What don't I understand here? What am I missing?
+// I created the function.
+// I'm not sure if I defined playRound parameters correctly
+// I didn't make the parameter case insensitive
+// I did not have console.log return a message
+// I did not code a way to increment the score
