@@ -8,11 +8,7 @@
 // start of 
 //}
 
-function getComputerChoice () {
-    let choices = ["rock", "paper", "scissors"];
-    let result = Math.floor(Math.random() * choices.length);
-    return choices[result]
-}
+
 
 // Write the logic to get the human choice
 
@@ -21,19 +17,7 @@ function getComputerChoice () {
 // Add "prompt" method to get user's input
 // }
 
-function getHumanChoice () {
-    let choice = prompt("Choose Rock, Paper, or Scissors.");
-    
-    if (choice.toLowerCase() ===  "rock")  {
-    }
 
-    else if (choice.toLowerCase() ===  "paper" )  {
-    }
-
-    else if (choice.toLowerCase() ===  "scissors" )  {
-    }
-
-}
 
 
 // Declare the player score variables
@@ -65,93 +49,135 @@ function getHumanChoice () {
 // 'CALL' is a keyword
 
 
-function playGame (x) {
-// passing loop value does little because playRound doesn't read it
-// you need a function here for running the game
 
-x(playRound(playRound));
+function playGame (c) {
+
+ 
+let counter = 1;
+function loop()
+{   
+    
+    alert('Round ' +counter);
+    if (counter < 5){
+        counter++
+        window.setTimeout(loop, 400);
+
+    }
+} 
+
+
+
+const z = loop();
+const x = playRound();
+
+c(z, x);
+    //3
+function playRound (humanChoice, computerChoice) {
+// it's this line, and 'humanChoice', 'computerChoice' that aren't working,
 
 
 
 
+   //1 
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
-    
-    playRound(humanSelection, computerSelection);
-    
 
-    function playRound (humanChoice, computerChoice) {
-// try to play a single round with prompt, and then iterate that with loop
-    
+
+    //2
+    playRound(humanSelection, computerSelection) 
+
+    //4 
         if (humanChoice === "rock" && computerChoice === "rock") {
-            alert ("It's a draw!  $humanScore $computerScore");
+            console.log ("It's a draw! ${humanScore} ${computerScore} ");
         }   
         else if (humanChoice === "rock" && computerChoice === "paper") {
             computerScore += 1;
-            alert ("You lose! $humanScore $computerScore");
+            console.log ("You lose! ");
         }   
     
         else if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore += 1;
-            alert ("You win! $humanScore $computerScore");
+            console.log ("You win! ");
         }   
     
         else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore += 1;
-            alert ("You win! $humanScore $computerScore");
+            console.log ("You win! ");
         }   
     
         else if (humanChoice === "paper" && computerChoice === "paper") {
-            alert ("It's a draw! $humanScore $computerScore");
+            console.log ("It's a draw! ");
         }   
     
         else if (humanChoice === "paper" && computerChoice === "scissors") {
             computerScore += 1;
-            alert ("You lose! $humanScore $computerScore");
+            console.log ("You lose! ");
         }
     
         else if (humanChoice === "scissors" && computerChoice === "rock") {
             computerScore += 1;
-            alert ("You lose! $humanScore $computerScore");
+            console.log ("You lose! ");
         }
     
         else if (humanChoice === "scissors" && computerChoice === "paper") {
             humanScore += 1;
-            alert ("You win! $humanScore $computerScore");
+            console.log ("You win! ");
         }   
     
         else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
-            alert ("It's a draw! $humanScore $computerScore");
-        }   
-    
-    }
+            console.log ("It's a draw! ");
 
-    let humanScore = 0;
-    let computerScore = 0;
+        }
+
+    
+        function getComputerChoice () {
+            let choices = ["rock", "paper", "scissors"];
+            let result = Math.floor(Math.random() * choices.length);
+            return choices[result]
+        }
+        
+        function getHumanChoice () {
+            let choice = prompt("Choose Rock, Paper, or Scissors");
+                if (choice.toLowerCase() ===  "rock")  {
+                    return "rock";
+            }
+        
+                else if (choice.toLowerCase() ===  "paper" )  {
+                return "paper"
+            }
+        
+                else if (choice.toLowerCase() ===  "scissors" )  {
+                return "scissors"
+            }
+        
+        }
+
+        let humanScore = 0;
+        let computerScore = 0;
+        
+        console.log(humanScore);
+        console.log(computerScore);
 
 }
-// 1.
+
+    
+
+}
+
 // function to iterate game five times
 // what kind of variables/function to use?
 // Create functions, and then const variables to then use as parameters for 'playGame'
 
 
 
-let counter = 1;
-function loop()
-{
-    alert (getHumanChoice());
-    if (counter < 5){
-        counter++
-        window.setTimeout(loop, 400);
-    }
-}
-
-// use 'loop' as parameter for 'playGame' to run the function five times
-// change prompt so 'getPlayerChoice' prompt runs five times
-
-// 
-
-playGame(loop);
 
 
+
+
+playGame();
+
+// 1. 'loop' runs only once, rather than five times
+// 2.'getHumanChoice' does not pass selection to if else, and doesn't compare results,
+// 3. or count score
+// console.log showed results from playRound, compared, and counted score, but it's not
+// working
