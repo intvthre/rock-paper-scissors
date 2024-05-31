@@ -1,25 +1,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
-function playGame (c) {
+function playGame () {
 
-let counter = 1;
-function loop()
-{   
-    
-    
-    if (counter < 6){
-        alert('Round ' +counter);
-        console.log('Round ' +counter)
-        counter++
-        window.setTimeout(loop, 400);
-    }
-} 
+x = playRound();
 
-const z = loop();
-const x = playRound();
-
-c(x, z);
 
 function playRound (humanChoice, computerChoice) {
 
@@ -78,9 +63,9 @@ function playRound (humanChoice, computerChoice) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-    playRound(humanSelection, computerSelection) 
+    playRound(humanSelection, computerSelection);
 
-    return
+    
         function getComputerChoice () {
             let choices = ["rock", "paper", "scissors"];
             let result = Math.floor(Math.random() * choices.length);
@@ -107,7 +92,10 @@ function playRound (humanChoice, computerChoice) {
 
 }
 
+// Try adding return in a different place
 
+let i = 0;
 
+for (i=0; i<=5; i += 1) {    
 playGame();
-
+}
