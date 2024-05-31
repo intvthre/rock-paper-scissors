@@ -1,144 +1,86 @@
-// Write a function that randomly returns "rock", "paper", or "scissors"
-
-// "Function" {
-// (Input = randomly "return" a string from an array)
-// "Array" = [three strings]
-// "Math.random" = return a random string from array
-//  Run array through Math.random with "return"; "return" sends input to () at 
-// start of 
-//}
-
-
-
-// Write the logic to get the human choice
-
-// "Function" {
-// (Input = "return" one of the valid choice from input)
-// Add "prompt" method to get user's input
-// }
-
-
-
-
-// Declare the player score variables
-
-// Create variables 'humanScore' and 'computerScore'
-// Initialize variables with value of 0
-
-
-
-
-// Write the logic to play a single round
-
-// "Function" {
-// (Input = two parameters "humanChoice" and "computerChoice" taking
-// "getHumanChoice" and "getComputerChoice" as arguments, and keeping score;
-//  pass values(arguments) to function by passing value from previous functions)
-// 'humanChoice' parameter 'toLowerCase'
-// Code 'console.log for 'playRound' to declare round winner
-// 'humanScore' and 'computerScore' incrementing based on round winner
-//}
-
-
-
-// Write the logic to play the entire game
-
-// 'Function' {
-// Move playRound and score variables to function
-// Call 'playRound' to play five rounds
-// 'CALL' is a keyword
-
-
+let humanScore = 0;
+let computerScore = 0;
 
 function playGame (c) {
 
- 
 let counter = 1;
 function loop()
 {   
     
-    alert('Round ' +counter);
-    if (counter < 5){
+    
+    if (counter < 6){
+        alert('Round ' +counter);
+        console.log('Round ' +counter)
         counter++
         window.setTimeout(loop, 400);
-
     }
 } 
-
-let humanScore = 0;
-let computerScore = 0;
-
-console.log(humanScore);
-console.log(computerScore);
 
 const z = loop();
 const x = playRound();
 
-c(z, x);
-    //3
-function playRound (humanChoice, computerChoice) {
-// it's this line, and 'humanChoice', 'computerChoice' that aren't working,
+c(x, z);
 
+function playRound (humanChoice, computerChoice) {
 
 
         if (humanChoice === "rock" && computerChoice === "rock") {
             alert ("It's a draw! ");
+            return;
         }   
         else if (humanChoice === "rock" && computerChoice === "paper") {
             computerScore += 1;
             alert ("You lose! ");
+            return;
         }   
     
         else if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore += 1;
             alert ("You win! ");
+            return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore += 1;
             alert ("You win! ");
+            return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "paper") {
             alert ("It's a draw! ");
+            return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "scissors") {
             computerScore += 1;
             alert ("You lose! ");
+            return;
         }
     
         else if (humanChoice === "scissors" && computerChoice === "rock") {
             computerScore += 1;
             alert ("You lose! ");
+            return;
         }
     
         else if (humanChoice === "scissors" && computerChoice === "paper") {
             humanScore += 1;
             alert ("You win! ");
+            return;
         }   
     
         else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
             alert ("It's a draw! ");
-
+            return;
         }
-
         
 
-
-   //1 
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-
-    //2
     playRound(humanSelection, computerSelection) 
 
-    //4 Think of a variable or function for passing selection values to 'playRound'
-    //  
-        
-
-    
+    return
         function getComputerChoice () {
             let choices = ["rock", "paper", "scissors"];
             let result = Math.floor(Math.random() * choices.length);
@@ -159,19 +101,13 @@ function playRound (humanChoice, computerChoice) {
                 return "scissors"
             }
         
-        }
-
-        
+        } 
 
 }
 
-    
-
 }
 
-// function to iterate game five times
-// what kind of variables/function to use?
-// Create functions, and then const variables to then use as parameters for 'playGame'
+
 
 playGame();
 
