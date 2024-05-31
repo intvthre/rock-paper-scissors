@@ -65,7 +65,11 @@ function loop()
     }
 } 
 
+let humanScore = 0;
+let computerScore = 0;
 
+console.log(humanScore);
+console.log(computerScore);
 
 const z = loop();
 const x = playRound();
@@ -77,6 +81,50 @@ function playRound (humanChoice, computerChoice) {
 
 
 
+        if (humanChoice === "rock" && computerChoice === "rock") {
+            alert ("It's a draw! ");
+        }   
+        else if (humanChoice === "rock" && computerChoice === "paper") {
+            computerScore += 1;
+            alert ("You lose! ");
+        }   
+    
+        else if (humanChoice === "rock" && computerChoice === "scissors") {
+            humanScore += 1;
+            alert ("You win! ");
+        }   
+    
+        else if (humanChoice === "paper" && computerChoice === "rock") {
+            humanScore += 1;
+            alert ("You win! ");
+        }   
+    
+        else if (humanChoice === "paper" && computerChoice === "paper") {
+            alert ("It's a draw! ");
+        }   
+    
+        else if (humanChoice === "paper" && computerChoice === "scissors") {
+            computerScore += 1;
+            alert ("You lose! ");
+        }
+    
+        else if (humanChoice === "scissors" && computerChoice === "rock") {
+            computerScore += 1;
+            alert ("You lose! ");
+        }
+    
+        else if (humanChoice === "scissors" && computerChoice === "paper") {
+            humanScore += 1;
+            alert ("You win! ");
+        }   
+    
+        else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
+            alert ("It's a draw! ");
+
+        }
+
+        
+
 
    //1 
     const humanSelection = getHumanChoice();
@@ -86,48 +134,9 @@ function playRound (humanChoice, computerChoice) {
     //2
     playRound(humanSelection, computerSelection) 
 
-    //4 
-        if (humanChoice === "rock" && computerChoice === "rock") {
-            console.log ("It's a draw! ${humanScore} ${computerScore} ");
-        }   
-        else if (humanChoice === "rock" && computerChoice === "paper") {
-            computerScore += 1;
-            console.log ("You lose! ");
-        }   
-    
-        else if (humanChoice === "rock" && computerChoice === "scissors") {
-            humanScore += 1;
-            console.log ("You win! ");
-        }   
-    
-        else if (humanChoice === "paper" && computerChoice === "rock") {
-            humanScore += 1;
-            console.log ("You win! ");
-        }   
-    
-        else if (humanChoice === "paper" && computerChoice === "paper") {
-            console.log ("It's a draw! ");
-        }   
-    
-        else if (humanChoice === "paper" && computerChoice === "scissors") {
-            computerScore += 1;
-            console.log ("You lose! ");
-        }
-    
-        else if (humanChoice === "scissors" && computerChoice === "rock") {
-            computerScore += 1;
-            console.log ("You lose! ");
-        }
-    
-        else if (humanChoice === "scissors" && computerChoice === "paper") {
-            humanScore += 1;
-            console.log ("You win! ");
-        }   
-    
-        else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
-            console.log ("It's a draw! ");
-
-        }
+    //4 Think of a variable or function for passing selection values to 'playRound'
+    //  
+        
 
     
         function getComputerChoice () {
@@ -152,11 +161,7 @@ function playRound (humanChoice, computerChoice) {
         
         }
 
-        let humanScore = 0;
-        let computerScore = 0;
         
-        console.log(humanScore);
-        console.log(computerScore);
 
 }
 
@@ -168,16 +173,5 @@ function playRound (humanChoice, computerChoice) {
 // what kind of variables/function to use?
 // Create functions, and then const variables to then use as parameters for 'playGame'
 
-
-
-
-
-
-
 playGame();
 
-// 1. 'loop' runs only once, rather than five times
-// 2.'getHumanChoice' does not pass selection to if else, and doesn't compare results,
-// 3. or count score
-// console.log showed results from playRound, compared, and counted score, but it's not
-// working
