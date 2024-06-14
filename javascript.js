@@ -92,10 +92,14 @@ function playRound (humanChoice, computerChoice) {
 
 }
 
-// Try adding return in a different place
 
 let i = 0;
 
-for (i=0; i<=5; i += 1) {    
+/* for (i=0; i<=5; i += 1) {    
 playGame();
-}
+} */
+
+const button = document.querySelector("button");
+button.addEventListener('click', () => {
+    playRound();
+});
