@@ -1,9 +1,35 @@
+
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors")
+
+const computerSelection = getComputerChoice();
+ 
+    rock.addEventListener('click', () => {
+        playRound("rock", computerSelection);
+    });
+ 
+    paper.addEventListener('click', () => {
+        playRound("paper", computerSelection);
+    })
+ 
+    scissors.addEventListener('click', () => {
+        playRound("scissors", computerSelection);
+    })
+ 
+     
+    function getComputerChoice () {
+        let choices = ["rock", "paper", "scissors"];
+        let result = Math.floor(Math.random() * choices.length);
+        return choices[result]
+         }
+         
 let humanScore = 0;
 let computerScore = 0;
 
-function playGame () {
+/* function playGame () {
 
-x = playRound();
+x = playRound(); */
 
 
 function playRound (humanChoice, computerChoice) {
@@ -58,48 +84,15 @@ function playRound (humanChoice, computerChoice) {
             alert ("It's a draw! ");
             return;
         }
-        
-
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);
-
     
-        function getComputerChoice () {
-            let choices = ["rock", "paper", "scissors"];
-            let result = Math.floor(Math.random() * choices.length);
-            return choices[result]
-        }
-        
-        function getHumanChoice () {
-            let choice = prompt("Choose Rock, Paper, or Scissors");
-                if (choice.toLowerCase() ===  "rock")  {
-                    return "rock";
-            }
-        
-                else if (choice.toLowerCase() ===  "paper" )  {
-                return "paper"
-            }
-        
-                else if (choice.toLowerCase() ===  "scissors" )  {
-                return "scissors"
-            }
-        
-        } 
-
 }
 
-}
+//}
 
 
-let i = 0;
+/* let i = 0; */
 
 /* for (i=0; i<=5; i += 1) {    
 playGame();
 } */
 
-const button = document.querySelector("button");
-button.addEventListener('click', () => {
-    playRound();
-});
