@@ -24,8 +24,6 @@ const computerSelection = getComputerChoice();
         return choices[result]
          }
          
-let humanScore = 0;
-let computerScore = 0;
 
 /* function playGame () {
 
@@ -36,52 +34,52 @@ function playRound (humanChoice, computerChoice) {
 
 
         if (humanChoice === "rock" && computerChoice === "rock") {
-            alert ("It's a draw! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
         else if (humanChoice === "rock" && computerChoice === "paper") {
             computerScore += 1;
-            alert ("You lose! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
     
         else if (humanChoice === "rock" && computerChoice === "scissors") {
             humanScore += 1;
-            alert ("You win! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "rock") {
             humanScore += 1;
-            alert ("You win! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "paper") {
-            alert ("It's a draw! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
     
         else if (humanChoice === "paper" && computerChoice === "scissors") {
             computerScore += 1;
-            alert ("You lose! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }
     
         else if (humanChoice === "scissors" && computerChoice === "rock") {
             computerScore += 1;
-            alert ("You lose! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }
     
         else if (humanChoice === "scissors" && computerChoice === "paper") {
             humanScore += 1;
-            alert ("You win! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }   
     
         else if (humanChoice === "scissors"  && computerChoice === "scissors" ) {
-            alert ("It's a draw! ");
+            div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
             return;
         }
     
@@ -95,4 +93,15 @@ function playRound (humanChoice, computerChoice) {
 /* for (i=0; i<=5; i += 1) {    
 playGame();
 } */
+
+// Announce winner when humanScore or computerScore reaches 5
+// Change alert to DOM method updating score in div
+// Fix computerChoice not changing value every round
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+const div = document.querySelector("div");
+div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
 
