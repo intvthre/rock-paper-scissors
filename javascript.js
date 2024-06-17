@@ -2,34 +2,48 @@
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors")
-
-const computerSelection = getComputerChoice();
  
     rock.addEventListener('click', () => {
-        playRound("rock", computerSelection);
+        playRound("rock", getComputerChoice());
+        if (humanScore === 5) {
+            p.textContent = "You win!";
+            
+        }
+        
+        else if (computerScore === 5) {
+            p.textContent = "You lose!";
+        }
     });
  
     paper.addEventListener('click', () => {
-        playRound("paper", computerSelection);
+        playRound("paper", getComputerChoice());
+        if (humanScore === 5) {
+            p.textContent = "You win!";
+        }
+        
+        else if (computerScore === 5) {
+            p.textContent = "You lose!";
+        }
     })
  
     scissors.addEventListener('click', () => {
-        playRound("scissors", computerSelection);
+        playRound("scissors", getComputerChoice());
+        if (humanScore === 5) {
+            p.textContent = "You win!";
+        }
+        
+        else if (computerScore === 5) {
+            p.textContent = "You lose!";
+        }
     })
  
      
-    function getComputerChoice () {
-        let choices = ["rock", "paper", "scissors"];
-        let result = Math.floor(Math.random() * choices.length);
-        return choices[result]
-         }
+function getComputerChoice () {
+    let choices = ["rock", "paper", "scissors"];
+    let result = Math.floor(Math.random() * choices.length);
+    return choices[result]
+    }
          
-
-/* function playGame () {
-
-x = playRound(); */
-
-
 function playRound (humanChoice, computerChoice) {
 
 
@@ -85,19 +99,6 @@ function playRound (humanChoice, computerChoice) {
     
 }
 
-//}
-
-
-/* let i = 0; */
-
-/* for (i=0; i<=5; i += 1) {    
-playGame();
-} */
-
-// Announce winner when humanScore or computerScore reaches 5
-// Change alert to DOM method updating score in div
-// Fix computerChoice not changing value every round
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -105,3 +106,4 @@ let computerScore = 0;
 const div = document.querySelector("div");
 div.textContent = `Player Score = ${humanScore} Computer Score = ${computerScore}`;
 
+const p = document.querySelector("p");
